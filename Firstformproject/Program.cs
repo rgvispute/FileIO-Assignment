@@ -16,7 +16,7 @@ namespace Firstformproject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Studentdata());
+            Application.Run(new Form2());
         }
     }
 }

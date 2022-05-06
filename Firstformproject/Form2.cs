@@ -22,24 +22,10 @@ namespace Firstformproject
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnShow_Click(object sender, EventArgs e)
-        {
-            //if (txtFullName.Text == "admin" && txtEmail.Text=="rv@gmail.com" && txtMobile.Text==9850608139 && txtAddress.Text == "Pune")
-            //{
-            //    MessageBox.Show("Success");
-            //}
-
-        }
-
+        
         private void button2_Click(object sender, EventArgs e)
         {
-          // txtFullName.Clear();
-            //txtPassword.Clear();
+           
 
         }
 
@@ -60,7 +46,19 @@ namespace Firstformproject
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (Box1Name.Text == "Ruchita") ;
+            if (txtname.Text == "admin" && txtemail.Text == "rv@gmail.com" && txtmobile.Text == "9850608139" && txtaddress.Text == "Pune")
+            {
+                MessageBox.Show("Success");
+            }
+           
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            txtname.Clear();
+            txtemail.Clear();
+            txtmobile.Clear();
+            txtaddress.Clear();
         }
     }
 }
