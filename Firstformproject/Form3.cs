@@ -80,7 +80,7 @@ namespace Firstformproject
                 int id = Convert.ToInt32(txtId.Text);
                 string name = txtName.Text;
                 string location = txtLocation.Text;
-                fs = new FileStream(@"D:\TestFolder1\FirstFile.txt", FileMode.Create, FileAccess.Write);
+                fs = new FileStream(@"D:\TestFolder\FirstFile.txt", FileMode.Create, FileAccess.Write);
                 BinaryWriter bw = new BinaryWriter(fs);
                 bw.Write(id);
                 bw.Write(name);
@@ -104,7 +104,7 @@ namespace Firstformproject
         {
             try
             {
-                fs = new FileStream(@"D:\TestFolder1\FirstFile.txt", FileMode.Open, FileAccess.Read);
+                fs = new FileStream(@"D:\TestFolder\FirstFile.txt", FileMode.Open, FileAccess.Read);
                 BinaryReader br = new BinaryReader(fs);
                 txtId.Text = br.ReadInt32().ToString();
                 txtName.Text = br.ReadString();
