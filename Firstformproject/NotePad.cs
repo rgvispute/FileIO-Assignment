@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Firstformproject
 {
@@ -69,6 +70,61 @@ namespace Firstformproject
                 richTextBox1.SelectionColor = colorDialog.Color;
             }
 
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+                
+            
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog od = new OpenFileDialog();
+                od.Filter = "Text Dococument(*.txt)|*.txt|Word(*.docx)|*.docx|All Files(*.*)|*.*";
+                DialogResult result = od.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    StreamReader sr = new StreamReader(od.FileName);
+                    richTextBox1.Text = sr.ReadToEnd();
+                    sr.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+
+                SaveFileDialog sd = new SaveFileDialog();
+                sd.DefaultExt = ".txt";
+                sd.Filter = "Text Dococument(.*txt)|*.txt|word(.*Docx)|*.Docx";
+                DialogResult result = sd.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    StreamWriter sw = new StreamWriter(sd.FileName);
+                    sw.WriteLine(richTextBox1.Text);
+                    sw.Close();
+
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+
+            }
         }
     }
 }
